@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Agendex</string>
+    <string name="cadastroPaciente">Cadastrar Paciente</string>
+    <string name="cadastroMedico">Cadastrar Medico</string>
+    <string name="cadastroClinica">Cadastrar Clinica</string>
+    <string name="cadastroAgendamento">Cadastrar Agendamento</string>
+    <string name="Logar_app">Logar</string>
+
+
+</resources>

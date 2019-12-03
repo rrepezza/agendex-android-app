@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="btn_adicionar">Adicionar</string>
+    <string name="btn_AdicionarMed">Adicionarmed</string>
+    <string name="btn_adicionarClinica">AdicionarClinica</string>
+    <string name="btn_logar">Logar app</string>
+    <string name="btnCadPaciente">AdicionarAgendamento</string>
+</resources>

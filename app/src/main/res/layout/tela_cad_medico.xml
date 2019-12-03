@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context="br.com.senaigo.mobile.vouaprenderandroid.atividades.ControladorMedico">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/txtNome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_nome"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/txtNomeSocial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_nomeSocial"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/txtCPF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_cpf"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/txtRG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_rg"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/txtTelefone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_telefone"
+                android:inputType="phone" />
+
+            <EditText
+                android:id="@+id/txtOrgaoExpeditor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_orgaoExpedidor"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/txtSexo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_sexo"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/txtDataNasc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_dataNasc"
+                android:inputType="date" />
+
+            <EditText
+                android:id="@+id/txtEndereco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_endereco"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/txtEspecialidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_especialidade"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/txtCRM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_crm"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/txtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_email"
+                android:inputType="textEmailAddress" />
+
+            <Button
+                android:id="@+id/btn_AdicionarMed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="adicionarMedico"
+                android:text="@string/btn_adicionar"
+                android:textColor="@color/colorPrimary"
+                android:background="@android:color/holo_blue_dark"
+                />
+
+            <ListView
+                android:id="@+id/listaMedico"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Agendex</string>
+    <string name="cadastroPaciente">Cadastrar Paciente</string>
+    <string name="cadastroMedico">Cadastrar Medico</string>
+    <string name="cadastroClinica">Cadastrar Clinica</string>
+    <string name="cadastroAgendamento">Cadastrar Agendamento</string>
+    <string name="Logar_app">Logar</string>
+
+
+    <string name="hint_nome">Informe seu nome completo</string>
+    <string name="hint_nomeSocial"> Informe seu nome social</string>
+    <string name="hint_cpf">Infomre o seu CPF</string>
+    <string name="hint_rg">Informe o seu RG</string>
+    <string name="hint_telefone">Informe seu telefone</string>
+    <string name="hint_orgaoExpedidor">Informe o orgão expeditor do seu RG</string>
+    <string name="hint_dataNasc">Informe sua data de nascimento</string>
+    <string name="hint_sexo">Informe seu sexo</string>
+    <string name="hint_endereco">Informe seu endereço</string>
+    <string name="hint_crm">Informe seu CRM</string>
+    <string name="hint_especialidade">Informe sua especialidade</string>
+    <string name="hint_email">Informe seu e-mail</string>
+    <string name="hint_senha">Informe sua senha</string>
+
+    <string name="hint_cnpj">Informe o CNPJ</string>
+    <string name="hint_razaoSocial">Informe a razão social</string>
+    <string name="hint_nomeClinica">Informe o nome fantasia da clínica</string>
+
+    <string name="hint_cep">Informe o CEP</string>
+    <string name="hint_inscricaoEstadual">Informe a inscrição Estadual da clínica</string>
+    <string name="hint_inscricaoMunicipal">Informe a inscrição Municipal da clínica</string>
+    <string name="hint_logradouro">Informe o logadouro</string>
+    <string name="hint_complemento">Informe o complemento do endereço</string>
+
+</resources>

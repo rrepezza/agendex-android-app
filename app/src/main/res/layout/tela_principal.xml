@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context="br.com.senaigo.mobile.vouaprenderandroid.atividades.MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnCadClinica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="ControladorClinica"
+            android:text="@string/cadastroClinica" />
+
+        <Button
+            android:id="@+id/btnCadMedico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="ControladorMedico"
+            android:text="@string/cadastroMedico" />
+
+        <Button
+            android:id="@+id/btnCadPaciente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="ControladorPaciente"
+            android:text="@string/cadastroPaciente"
+
+            />
+
+        <Button
+            android:id="@+id/btnCadagendamento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="ControladorAgendamento"
+            android:text="@string/cadastroAgendamento"
+
+            />
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context="br.com.senaigo.mobile.vouaprenderandroid.atividades.ControladorClinica">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/txtNomeClinica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_nomeClinica"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/txtRazaoSocial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_razaoSocial"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/txtCnpj"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_cnpj"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/txtTelefone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_telefone"
+                android:inputType="phone" />
+
+            <EditText
+                android:id="@+id/txtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_email"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/txtInscricaoEstadual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_inscricaoEstadual"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/txtInscricaoMunicipal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_inscricaoMunicipal"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/txtCep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_cep"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/txtLogradouro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_logradouro"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/txtComplemento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_complemento"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/btn_adicionarClinica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="adicionarClinica"
+                android:text="@string/btn_adicionar"
+                android:textColor="@color/colorPrimary"
+                android:background="@android:color/holo_blue_dark"
+                />
+
+            <ListView
+                android:id="@+id/listaClinica"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
