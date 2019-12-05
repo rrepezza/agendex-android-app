@@ -9,63 +9,19 @@
     tools:ignore="MissingDefaultResource">
 
 
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="80dp"
-        android:layout_marginEnd="50dp"
-        android:text="Escolha uma opção para cadastro"
+        android:layout_marginEnd="138dp"
+        android:text="Menu Principal"
         android:textColor="@color/colorPrimary"
-        android:textSize="18dp"
 
-        />
-
-    <Button
-        android:id="@+id/btnCadClinica"
-        android:layout_width="220dp"
-        android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="75dp"
-        android:onClick="ControladorClinica"
-        android:text="@string/cadastroClinica"
-        android:textColor="@color/colorPrimary"
-        android:background="@android:color/holo_blue_dark"
-        />
-
-    <Button
-        android:id="@+id/btnCadMedico"
-        android:layout_width="220dp"
-        android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="220dp"
-        android:layout_marginEnd="75dp"
-        android:onClick="ControladorMedico"
-        android:text="@string/cadastroMedico"
-        android:textColor="@color/colorPrimary"
-        android:background="@android:color/holo_blue_dark"
-        />
-
-    <Button
-    android:id="@+id/btnCadPaciente"
-    android:layout_width="220dp"
-    android:layout_height="50dp"
-    android:layout_alignParentEnd="true"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="290dp"
-    android:layout_marginEnd="75dp"
-    android:onClick="ControladorPaciente"
-    android:text="@string/cadastroPaciente"
-    android:textColor="@color/colorPrimary"
-    android:background="@android:color/holo_blue_dark"
-    />
-
+        android:textSize="18dp" />
 
     <Button
         android:id="@+id/btnCadagendamento"
@@ -73,12 +29,24 @@
         android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="360dp"
-        android:layout_marginEnd="75dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="79dp"
+        android:background="@android:color/holo_blue_dark"
         android:onClick="ControladorAgendamento"
         android:text="@string/cadastroAgendamento"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorPrimary" />
+
+    <Button
+        android:id="@+id/btnListarAgendamentos"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="88dp"
         android:background="@android:color/holo_blue_dark"
-        />
+        android:onClick="ControladorAgendamento"
+        android:text="@string/listarAgendamentos"
+        android:textColor="@color/colorPrimary" />
 
 </RelativeLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="opcoes">
+        <item>Dra. Maria de Fatima</item>
+        <item>Dr. Ricardo Lopes</item>
+        <item>Dr. Andre Felipe</item>
+        <item>Dra. Ana Maria</item>
+        <item>Dra. Juliana Carvalho</item>
+    </string-array>
+
+
+
+</resources>

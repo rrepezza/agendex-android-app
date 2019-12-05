@@ -2,57 +2,58 @@ package br.com.senaigo.mobile.vouaprenderandroid.entidades;
 
 public class Agendamento {
 
-    protected String dataConsulta;
-    protected String especialidade;
-    protected String idMedico;
-    protected String idPaciente;
+    private String cpfPaciente;
+    private String nomeMedico;
+    private String dataAgendamento;
+    private String horaAgendamento;
 
-    public Agendamento(String dataConsulta, String especialidade, String idMedico, String idPaciente) {
-        this.dataConsulta = dataConsulta;
-        this.especialidade = especialidade;
-        this.idMedico = idMedico;
-        this.idPaciente = idPaciente;
+
+    public Agendamento(String cpf, String medico, String dataAgendamento, String horaAgendamento) {
+        this.cpfPaciente = cpf;
+        this.nomeMedico = medico;
+        this.dataAgendamento = dataAgendamento;
+        this.horaAgendamento = horaAgendamento;
     }
 
-    public String getDataConsulta() {
-        return dataConsulta;
+    public String getCpfPaciente() {
+        return cpfPaciente;
     }
 
-    public void setDataConsulta(String dataConsulta) {
-        this.dataConsulta = dataConsulta;
+    public void setCpfPaciente(String cpfPaciente) {
+        this.cpfPaciente = cpfPaciente;
     }
 
-    public String getEspecialidade() {
-        return especialidade;
+    public String getNomeMedico() {
+        return nomeMedico;
     }
 
-    public void setEspecialidade(String especialidade) {
-        this.especialidade = especialidade;
+    public void setNomeMedico(String nomeMedico) {
+        this.nomeMedico = nomeMedico;
     }
 
-    public String getIdMedico() {
-        return idMedico;
+    public String getDataAgendamento() {
+        return dataAgendamento;
     }
 
-    public void setIdMedico(String idMedico) {
-        this.idMedico = idMedico;
+    public void setDataAgendamento(String dataAgendamento) {
+        this.dataAgendamento = dataAgendamento;
     }
 
-    public String getIdPaciente() {
-        return idPaciente;
+    public String getHoraAgendamento() {
+        return horaAgendamento;
     }
 
-    public void setIdPaciente(String idPaciente) {
-        this.idPaciente = idPaciente;
+    public void setHoraAgendamento(String horaAgendamento) {
+        this.horaAgendamento = horaAgendamento;
     }
 
     @Override
     public String toString() {
         return "Agendamento{" +
-                "dataConsulta='" + dataConsulta + '\'' +
-                ", especialidade='" + especialidade + '\'' +
-                ", idMedico=" + idMedico +
-                ", idPaciente=" + idPaciente +
+                "cpfPaciente='" + cpfPaciente + '\'' +
+                ", nomeMedico='" + nomeMedico + '\'' +
+                ", dataAgendamento='" + dataAgendamento + '\'' +
+                ", horaAgendamento='" + horaAgendamento + '\'' +
                 '}';
     }
 }

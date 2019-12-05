@@ -1,10 +1,14 @@
 package br.com.senaigo.mobile.vouaprenderandroid.atividades;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -16,23 +20,29 @@ import java.util.List;
 import br.com.senaigo.mobile.vouaprenderandroid.R;
 import br.com.senaigo.mobile.vouaprenderandroid.api.APIClient;
 import br.com.senaigo.mobile.vouaprenderandroid.api.AgendamentoResorce;
+import br.com.senaigo.mobile.vouaprenderandroid.api.LoginResorce;
 import br.com.senaigo.mobile.vouaprenderandroid.entidades.Agendamento;
+import br.com.senaigo.mobile.vouaprenderandroid.entidades.Login;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
+
 
 public class AgendamentoActivity extends AppCompatActivity {
 
     public EditText txtDataConsulta;
-    public EditText txtEspecialidade;
-    public EditText txtIdMedico;
-    public EditText txtIdPaciente;
-    public List<Agendamento> lista = new ArrayList<>();
-    public ListView listaAgendamento;
+    public EditText txtHoraAgendamento;
+    public EditText txtMedico;
+    String cpfTelaAnterior;
+    public CalendarView calendar;
+    String data;
+    public Spinner comboHora;
+    public Spinner comboMedico;
 
     AgendamentoResorce agendamentoResorce;
 
-    Spinner opcoes;
+    Spinner opcoes, opcoes2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +51,30 @@ public class AgendamentoActivity extends AppCompatActivity {
 
         agendamentoResorce = APIClient.getClient().create(AgendamentoResorce.class);
 
-        opcoes = (Spinner)findViewById(R.id.comboEspecialidade);
+        opcoes = (Spinner)findViewById(R.id.comboMedicos);
+        opcoes2 = (Spinner)findViewById(R.id.comboHora);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.opcoes, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,R.array.opcoesConsulta, android.R.layout.simple_spinner_item);
         opcoes.setAdapter(adapter);
+        opcoes2.setAdapter(adapter2);
+
+        Intent intentPg = getIntent();
+
+        cpfTelaAnterior = intentPg.getStringExtra("cpf");
+
+        comboHora = findViewById(R.id.comboHora);
+        comboMedico = findViewById(R.id.comboMedicos);
+
+        calendar = findViewById(R.id.calendarView);
+        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
+                if(i1 < 12) {
+                    i1 = i1 + 1;
+                }
+                data = i2 + "/" + i1 + "/" + i;
+            }
+        });
 
     }
 
@@ -52,29 +83,45 @@ public class AgendamentoActivity extends AppCompatActivity {
     public void agendar(View view){
 
 
-        txtDataConsulta = findViewById(R.id.calendarView);
-        txtEspecialidade = findViewById(R.id.comboEspecialidade);
-        txtIdMedico = findViewById(R.id.txtItemIDMedico);
-        //txtIdPaciente = findViewById(R.id.txtitemid);
+        String hora = comboHora.getSelectedItem().toString();
+        String medicoCombo = comboMedico.getSelectedItem().toString();
 
 
-        String dataConsulta, especialidade, idmedico, idpaciente;
+        //txtDataConsulta = findViewById(R.id.calendarView);
+        //txtHoraAgendamento = findViewById(R.id.comboHora);
+        //txtMedico = findViewById(R.id.comboMedicos);
+
+        String dataAgendamento, horaAgendamento, paciente, medico;
 
 
-        dataConsulta = txtDataConsulta.getText().toString();
-        especialidade = txtEspecialidade.getText().toString();
-        idmedico = txtIdMedico.getText().toString();
-        idpaciente = txtIdPaciente.getText().toString();
+        dataAgendamento = data;
+        horaAgendamento = hora;
+        medico = medicoCombo;
+        paciente = cpfTelaAnterior;
 
 
-        Agendamento agendamento = new Agendamento(dataConsulta,  especialidade, idmedico, idpaciente);
+        final Agendamento agendamento = new Agendamento(paciente, medico, dataAgendamento, horaAgendamento);
+        Retrofit retrofit = APIClient.getClient();
+        agendamentoResorce = retrofit.create(AgendamentoResorce.class);
 
-        lista.add(agendamento);
         Call<Agendamento> agendamentoCall = agendamentoResorce.post(agendamento);
 
         agendamentoCall.enqueue(new Callback<Agendamento>() {
             @Override
             public void onResponse(Call<Agendamento> call, Response<Agendamento> response) {
+
+                Log.i("objLogin", agendamento.toString());
+
+                if (response.code() == 400) {
+
+                    Toast.makeText(getApplicationContext(), "Erro ao gerar o agendamento", Toast.LENGTH_LONG).show();
+
+                } else {
+
+                    Toast.makeText(getApplicationContext(), "Agendamento realizado com sucesso!", Toast.LENGTH_LONG).show();
+
+                }
+
 
             }
 
@@ -94,3 +141,4 @@ public class AgendamentoActivity extends AppCompatActivity {
 
 
 }
+

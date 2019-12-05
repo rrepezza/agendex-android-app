@@ -16,11 +16,17 @@ public class PacienteAdapter extends BaseAdapter {
 
     Context context;
     List<Paciente> colecao;
+    Paciente paciente;
     LayoutInflater inflter;
 
     public PacienteAdapter (final Context applicationContext, final List<Paciente> colecao){
         this.context = applicationContext;
         this.colecao = colecao;
+    }
+
+    public PacienteAdapter (final Context applicationContext, final Paciente p) {
+        this.context = applicationContext;
+        this.paciente = p;
     }
 
     @Override

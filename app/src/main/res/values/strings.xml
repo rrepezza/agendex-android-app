@@ -4,7 +4,9 @@
     <string name="cadastroMedico">Cadastrar Medico</string>
     <string name="cadastroClinica">Cadastrar Clinica</string>
     <string name="cadastroAgendamento">Cadastrar Agendamento</string>
+    <string name="listarAgendamentos">Listar Agendamentos</string>
     <string name="Logar_app">Logar</string>
+    <string name="cadatrar_app">Cadastrar</string>
 
 
     <string name="hint_nome">Informe seu nome completo</string>

@@ -25,6 +25,10 @@ public class Paciente {
         this.senha = senha;
     }
 
+    public Paciente(String cpf) {
+        this.cpf = cpf;
+    }
+
     public String getNomeCompleto() {
         return nomeCompleto;
     }
@@ -103,5 +107,9 @@ public class Paciente {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public String toString() {
+        return this.getNomeCompleto();
     }
 }

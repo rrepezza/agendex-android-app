@@ -5,31 +5,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".atividades.MainActivity">
+    tools:context=".atividades.AgendamentoActivity">
 
     <TextView
-        android:id="@+id/txtEspecialidade"
-        android:layout_width="196dp"
-        android:layout_height="32dp"
+        android:id="@+id/txtmedicos"
+        android:layout_width="234dp"
+        android:layout_height="31dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="17dp"
-        android:layout_marginEnd="195dp"
-        android:text="Escolha uma especialidade"
-        android:textSize="15dp"
+        android:layout_marginEnd="157dp"
+        android:text="Escolha o Medico"
+        android:textSize="20dp"
 
         />
 
     <Spinner
-        android:id="@+id/comboEspecialidade"
-        android:layout_width="206dp"
+        android:id="@+id/comboMedicos"
+        android:layout_width="245dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtEspecialidade"
+        android:layout_below="@+id/txtmedicos"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="53dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="96dp" />
+
+    <TextView
+        android:id="@+id/txthora"
+        android:layout_width="243dp"
+        android:layout_height="29dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="152dp"
+        android:textSize="20dp"
+        tools:text="Escolha a hora da consulta" />
+
+    <Spinner
+        android:id="@+id/comboHora"
+        android:layout_width="247dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txthora"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="130dp"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="96dp" />
 
@@ -44,21 +68,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
-    <EditText
-        android:id="@+id/txtItemIDMedico"
-        android:layout_width="199dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="145dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Medico" />
-
     <Button
-        android:id="@+id/btn_logar"
+        android:id="@+id/btn_agendarr"
         android:layout_width="150dp"
         android:layout_height="35dp"
         android:layout_alignParentEnd="true"
@@ -69,7 +80,7 @@
         android:textColor="#fff"
         android:textSize="16dp"
         android:text="Agendar"
-
+        android:onClick="agendar"
         />
 
 </RelativeLayout>

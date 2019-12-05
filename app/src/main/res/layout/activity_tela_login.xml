@@ -64,14 +64,20 @@
 
         />
 
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/btn_logar2"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="520dp"
         android:layout_marginEnd="75dp"
-        android:text="Lembrar Usuario" />
+        android:background="@android:color/holo_blue_dark"
+        android:onClick="cadastrar"
+        android:text="@string/cadatrar_app"
+        android:textColor="#fff"
+        android:textSize="16dp"
+
+        />
 
 </RelativeLayout>

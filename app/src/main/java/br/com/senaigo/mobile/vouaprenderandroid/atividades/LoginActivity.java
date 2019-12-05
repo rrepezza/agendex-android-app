@@ -33,13 +33,13 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public void logar(View view) {
+    public void logar(final View view) {
 
         txtCpf = findViewById(R.id.txtcpfLogin);
         txtSenha = findViewById(R.id.txtsenhaLogin);
 
 
-        String senha,cpf;
+        final String senha,cpf;
         cpf = txtCpf.getText().toString();
         senha = txtSenha.getText().toString();
 
@@ -59,15 +59,12 @@ public class LoginActivity extends AppCompatActivity {
             loginResorce = retrofit.create(LoginResorce.class);
             Call<Login> call = loginResorce.post(login);
 
-
-
-
             call.enqueue(new Callback<Login>() {
                 @Override
                 public void onResponse(Call<Login> call, Response<Login> response) {
 
-                    Log.i("objLogin", login.toString());
-                    Log.i("resposta", String.format(response.toString()));
+                    //Log.i("objLogin", login.toString());
+                   // Log.i("resposta", response.body().toString());
 
                     if (response.code() == 401) {
 
@@ -75,14 +72,19 @@ public class LoginActivity extends AppCompatActivity {
 
                     } else if (response.code() == 400) {
 
-                        Toast.makeText(getApplicationContext(), "CPF está nao encontrado!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "CPF nao encontrado!", Toast.LENGTH_LONG).show();
 
                     } else {
 
+                        Intent intent = new Intent(view.getContext(), MainActivity.class);
+                        intent.putExtra("cpf", cpf);
+                        startActivity(intent);
 
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        //startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
-                        Toast.makeText(getApplicationContext(), login.getCpf() + " Logado com sucesso !", Toast.LENGTH_LONG).show();
+
+
+                        //Toast.makeText(getApplicationContext(), login.getCpf() + " Logado com sucesso !", Toast.LENGTH_LONG).show();
 
                     }
 
@@ -97,6 +99,11 @@ public class LoginActivity extends AppCompatActivity {
             });
 
         }
+    }
+
+    public void cadastrar(final View view) {
+
+        startActivity(new Intent(getApplicationContext(), PacienteAtctivity.class));
     }
 
 }
