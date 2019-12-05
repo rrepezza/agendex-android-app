@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class APIClient {
 
-    public static final String ENDPOINT = "http://192.168.107.115:3000/";
+    public static final String ENDPOINT = "http://172.20.0.203:3000/";
 
     public static Retrofit getClient(){
         Retrofit retrofit = new Retrofit.Builder()

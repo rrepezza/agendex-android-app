@@ -117,8 +117,8 @@ public class AgendamentoActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Erro ao gerar o agendamento", Toast.LENGTH_LONG).show();
 
                 } else {
-
                     Toast.makeText(getApplicationContext(), "Agendamento realizado com sucesso!", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
                 }
 

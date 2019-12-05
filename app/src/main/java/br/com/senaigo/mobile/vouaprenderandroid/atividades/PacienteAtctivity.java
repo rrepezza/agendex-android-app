@@ -1,5 +1,6 @@
 package br.com.senaigo.mobile.vouaprenderandroid.atividades;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -26,7 +27,7 @@ public class PacienteAtctivity extends AppCompatActivity {
      EditText txtDataNasc;
      EditText txtEmail;
      EditText txtSenha;
-    ListView listView;
+     ListView listView;
 
     //public List<Paciente> lista = new ArrayList<>();
 
@@ -109,7 +110,12 @@ public class PacienteAtctivity extends AppCompatActivity {
         pacienteRes.enqueue(new Callback<Paciente>() {
             @Override
             public void onResponse(Call<Paciente> call, Response<Paciente> response) {
-                Toast.makeText(getApplicationContext(), "Paciente cadastrado !", Toast.LENGTH_LONG).show();
+                if(response.code() == 400) {
+                    Toast.makeText(getApplicationContext(), response.message(), Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Paciente cadastrado com sucesso!", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                }
 
             }
 
